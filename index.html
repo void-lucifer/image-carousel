@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Image Slider</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <section class="carousel-section">
+        <div class="carousel-container">
+            <div class="image-container">
+                <input type="radio" name="slide-radio" id="slide1" checked>
+                <input type="radio" name="slide-radio" id="slide2">
+                <input type="radio" name="slide-radio" id="slide3">
+                <input type="radio" name="slide-radio" id="slide4">
+                <input type="radio" name="slide-radio" id="slide5">
+
+                <div class="slide first">
+                    <img src="./images/1.jpg">
+                </div>
+                <div class="slide">
+                    <img src="./images/2.jpg">
+                </div>
+                <div class="slide">
+                    <img src="./images/3.jpg">
+                </div>
+                <div class="slide">
+                    <img src="./images/4.jpg">
+                </div>
+                <div class="slide">
+                    <img src="./images/5.jpg">
+                </div>
+
+                <div class="nav-manual">
+                    <label for="slide1" id="manual-btn1" class="manual-btn" onClick="updateCounter(1)"></label>
+                    <label for="slide2" id="manual-btn2" class="manual-btn" onClick="updateCounter(2)"></label>
+                    <label for="slide3" id="manual-btn3" class="manual-btn" onClick="updateCounter(3)"></label>
+                    <label for="slide4" id="manual-btn4" class="manual-btn" onClick="updateCounter(4)"></label>
+                    <label for="slide5" id="manual-btn5" class="manual-btn" onClick="updateCounter(5)"></label>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script type="text/javascript">
+        var totalImages = 5;
+        var counter = 2;
+
+        function autoplayCarousel() {
+            if (counter > totalImages) counter = 1;
+            document.getElementById('slide' + counter++).checked = true;
+        }
+
+        // Manual button handler
+        function updateCounter(val) {
+            // document.getElementById('slide' + val).checked = true;
+            counter = val;
+        }
+
+        // AutoPlay
+        setInterval(autoplayCarousel, 5000);
+    </script>
+
+</body>
+
+</html>
