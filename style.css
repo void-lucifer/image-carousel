@@ -80,8 +80,7 @@ body {
 }
 
 .manual-btn:hover {
-    background-color: black;
-    height: var(--nav-size-active);
+    background-color: var(--nav-active-color);
 }
 
 #slide0:checked~.nav-manual #manual-btn0,
