@@ -16,10 +16,11 @@ function carouselGenerator(img_arr) {
         }
         label_str += `<label for="slide${i}" id="manual-btn${i}" class="manual-btn" onClick="updateCounter(${i})"></label>`;
     }
+    
     return document.getElementById("image-container").innerHTML = `${radio_str}${img_str} <div class="nav-manual">${label_str}</div>`;
 }
 
-//================================= Image Data =================================//
+//================================= Image Data Array =================================//
 const images = [
     "./images/1.jpg",
     "./images/2.jpg",
@@ -37,10 +38,10 @@ function autoplayCarousel() {
     document.getElementById('slide' + counter++).checked = true;
 }
 
-// Manual button handler
+//===========Manual button handler
 function updateCounter(val) {
     counter = val;
 }
 
-// AutoPlay
+//=============AutoPlay
 setInterval(autoplayCarousel, 3000);
